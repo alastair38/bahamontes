@@ -13,42 +13,61 @@ function disable_default_dashboard_widgets() {
 	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'core');   // Recent Drafts Widget
 	remove_meta_box('dashboard_primary', 'dashboard', 'core');         //
 	remove_meta_box('dashboard_secondary', 'dashboard', 'core');       //
+	remove_meta_box('dashboard_right_now', 'dashboard', 'core');
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'core');
+	remove_meta_box('dashboard_activity', 'dashboard', 'core');
 
 	// Removing plugin dashboard boxes
 	remove_meta_box('yoast_db_widget', 'dashboard', 'normal');         // Yoast's SEO Plugin Widget
 
 }
 
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
 /*
 For more information on creating Dashboard Widgets, view:
 http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
-// RSS Dashboard Widget
-function joints_rss_dashboard_widget() {
-	if(function_exists('fetch_feed')) {
-		include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
-		$feed = fetch_feed('http://jointswp.com/feed/rss/');        // specify the source feed
-		$limit = $feed->get_item_quantity(5);                      // specify number of items
-		$items = $feed->get_items(0, $limit);                      // create an array of items
-	}
-	if ($limit == 0) echo '<div>The RSS Feed is either empty or unavailable.</div>';   // fallback message
-	else foreach ($items as $item) { ?>
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function welcome_dashboard_widgets() {
 
-	<h4 style="margin-bottom: 0;">
-		<a href="<?php echo $item->get_permalink(); ?>" title="<?php echo mysql2date(__('j F Y @ g:i a', 'jointswp'), $item->get_date('Y-m-d H:i:s')); ?>" target="_blank">
-			<?php echo $item->get_title(); ?>
-		</a>
-	</h4>
-	<p style="margin-top: 0.5em;">
-		<?php echo substr($item->get_description(), 0, 200); ?>
-	</p>
-	<?php }
+	wp_add_dashboard_widget(
+                 'welcome_dashboard_widget',         // Widget slug.
+                 'Getting Started',         // Title.
+                 'welcome_dashboard_widget_function' // Display function.
+        );
+}
+add_action( 'wp_dashboard_setup', 'welcome_dashboard_widgets' );
+
+/**
+ * Create the function to output the contents of our Dashboard Widget.
+ */
+function welcome_dashboard_widget_function() {
+			echo
+			'<div class="welcome-panel">
+				<h1>Welcome to your site</h1>
+				<p class="about-description">Here are some links to get you started.</p>
+					<a class="button button-primary button-hero" href="' . admin_url() . 'customize.php" target="_blank">Customize your site\'s contact options and logo</a>
+				</p>
+				<div class="welcome-panel-column">
+					<h3>Next Steps</h3>
+					<ul>
+						<li>
+							<a class="welcome-icon welcome-add-page" href="' . admin_url() . 'post-new.php">Add Blog Post</a>
+						</li>
+					</ul>
+				</div>
+			</div>';
 }
 
 // Calling all custom dashboard widgets
-function joints_custom_dashboard_widgets() {
-	wp_add_dashboard_widget('joints_rss_dashboard_widget', __('Custom RSS Feed (Customize in admin.php)', 'jointswp'), 'joints_rss_dashboard_widget');
+function charly_custom_dashboard_widgets() {
+
 	/*
 	Be sure to drop any other created Dashboard Widgets
 	in this function and they will all load.
@@ -57,13 +76,13 @@ function joints_custom_dashboard_widgets() {
 // removing the dashboard widgets
 add_action('admin_menu', 'disable_default_dashboard_widgets');
 // adding any custom widgets
-add_action('wp_dashboard_setup', 'joints_custom_dashboard_widgets');
+add_action('wp_dashboard_setup', 'charly_custom_dashboard_widgets');
 
 /************* CUSTOMIZE ADMIN *******************/
 // Custom Backend Footer
-function joints_custom_admin_footer() {
-	_e('<span id="footer-thankyou">Developed by <a href="#" target="_blank">Your Site Name</a></span>.', 'jointswp');
+function charly_custom_admin_footer() {
+	_e('<span id="footer-thankyou">Developed by <a href="http://alastaircox.com" target="_blank">Alastair Cox</a></span>.', 'charlywp');
 }
 
 // adding it to the admin area
-add_filter('admin_footer_text', 'joints_custom_admin_footer');
+add_filter('admin_footer_text', 'charly_custom_admin_footer');

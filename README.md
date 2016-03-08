@@ -1,28 +1,24 @@
-This is based on Jeremy Englert's excellent JointsWP.
-Find out more here: www.jointswp.com  
-Demo: www.jointswp.com/demo
+##Charly##
 
-### What is JointsWP?
-JointsWP is a blank WordPress theme built with Foundation 6, giving you all the power and flexibility you need to build complex, mobile friendly websites without having to start from scratch.
+This theme integrates elements of Google's Material Design with Wordpress using the [Material CSS framework](http://materializecss.com/). The underlying file structure, bower and gulp support is indebted to Jeremy Englert's excellent [JointsWP](http://www.jointswp.com), although Charly itself does not use any Foundation elements.
 
-Starting its humble life as a fork of the popular theme Bones, JointsWP is now the foundation of thousands of websites across the globe.
+The theme takes is name from Charly Gaul, a Luxembourg cyclist and winner of the 1958 Tour de France.
 
-### What comes with JointsWP?
-JointsWP comes pre-baked with all of the great features that are found in the Foundation framework – simply put, if it works in Foundation, it will work in JointsWP. The theme also includes:
+![alt text][Charly]
 
-- Foundation Navigation Options
-- Grid archive templates
+[Charly]: https://github.com/alastair38/charly/blob/master/screenshot.png "The Angel of the Mountains"
+
+### What comes with Charly?
+Charly stands on the features that are found in the Materialize CSS framework, providing an optimised responsive front-end for building mobile-friendly websites. There is support for both standard off-canvas menus and our hybrid, action-button full-page overlay menu. What's more, there is:
 - Translation Support
-- Bower and Gulp Support
-- And much, much more!
+- Bower and Gulp Support (thanks again to Jeremy Englert for this)
 
 ### What tools do I need to use JointsWP?
-You can use whatever you want – seriously. While the Sass version comes with Bower and Gulp support out of the box, you aren’t required to use those by any means. You can use CodeKit, Grunt, Compass or nothing at all. It’s completely up to you how you decide to build you theme – JointsWP won’t get in the way of your workflow.
+If you're making any changes to the theme then ideally you'd utilise the built-in gulp support, for which NodeJS is required (see below)
 
 ### Getting Started With Gulp
 - Install [node.js](https://nodejs.org).
 - Using the command line, navigate to your theme directory
 - Run npm install
 - Run gulp to confirm everything is working
-
-[Read more about how Gulp is used with JointsWP.](http://jointswp.com/docs/gulp/)
+- The 'gulp watch' command will take care of pre-processing and minification if you're making any design changes
