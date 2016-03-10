@@ -2063,7 +2063,7 @@ ul {
 .z-depth-0, .commentlist li.depth-2, .commentlist li.depth-3, .commentlist li.depth-4, .commentlist li.depth-5 {
   box-shadow: none !important; }
 
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav, .inside {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
@@ -10801,11 +10801,51 @@ MODAL
     content: '\f144'; }
 
 /*********************
+ACF FORM OVERRIDES
+*********************/
+.acf_postbox input.select-dropdown {
+  padding: 5px 0 !important; }
+
+.acf-image-uploader .no-image {
+  color: transparent;
+  -webkit-animation: show 2000ms 1;
+  animation: show 2000ms 1; }
+
+input.add-image.btn, input.add-image.btn-large {
+  position: absolute;
+  top: 0; }
+
+.acf-google-map {
+  overflow: hidden; }
+
+.field {
+  padding-top: 2em !important;
+  padding-bottom: 2em !important; }
+  .field label {
+    text-transform: uppercase;
+    font-size: 16px !important;
+    font-weight: 400 !important; }
+
+.inside {
+  margin-bottom: 2em; }
+  .inside textarea {
+    padding: 3px 6px;
+    border: 2px solid #cecece;
+    background: whitesmoke;
+    border-radius: 2px;
+    line-height: 1.5em; }
+    .inside textarea:focus {
+      background: #fff; }
+
+.select-wrapper input.select-dropdown {
+  border-bottom-color: #26a69a !important; }
+
+/*********************
 POSTS & CONTENT STYLES
 *********************/
 @media only screen and (min-width: 601px) {
   #inner-content {
-    min-height: 80vh; } }
+    min-height: 85vh; } }
 
 footer.card-content {
   border-top: 1px solid rgba(160, 160, 160, 0.2); }

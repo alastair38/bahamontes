@@ -13,6 +13,7 @@ jQuery(document).ready(function() {
       menuWidth: 300
     }
   );
+  $('select').material_select();
 
  $('.modal-trigger').leanModal({opacity: 0.5});
  $(".modal-trigger").click(function(){
@@ -23,6 +24,10 @@ $(".dropdown-button").click(function(){
   $(".mdi-menu-down").toggleClass("rotate");
   $(".dropdown-content").toggleClass("block").css("min-width", $("li.dropdown").width());
 });
+$(".add-image").removeClass("button").addClass("btn");
+//$(".label").removeClass("label").addClass("chip");
+$(".field input[value='Report location']").addClass("btn");
+
 });
 
 window.cookieconsent_options = {

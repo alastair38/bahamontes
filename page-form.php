@@ -1,4 +1,10 @@
 <?php
+/*
+Template Name: Form
+*/
+
+acf_form_head();
+
 get_header(); ?>
 
 	<div class="container">
@@ -14,6 +20,8 @@ get_header(); ?>
 
 
 			    <?php endwhile; endif; ?>
+
+<?php get_template_part( 'parts/content', 'form' ); ?>
 
 
 			</main> <!-- end #main -->

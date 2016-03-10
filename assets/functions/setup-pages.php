@@ -59,10 +59,17 @@ function create_pages(){
     }
 }
 
+// Sets 'Home' as the static front page
+$home = get_page_by_title( 'Home' );
+update_option( 'page_on_front', $home->ID );
+update_option( 'show_on_front', 'page' );
+
+// Sets 'Blog' as the blog page
+$blog   = get_page_by_title( 'Blog' );
+update_option( 'page_for_posts', $blog->ID );
 
 /*********************
 CREATE MENU ITEMS FROM SETUP PAGES AND ASSIGN THESE AS MAIN-NAV
-*********************/
 // Check if the menu exists
 $menu_exists = wp_get_nav_menu_object( 'Main Navigation' );
 // If it doesn't exist, let's create it.
@@ -97,3 +104,4 @@ if( !$menu_exists){
     $locations['main-nav'] = $menu_id; //set our new menu to be the main nav
     set_theme_mod('nav_menu_locations', $locations); //update
 }
+*********************/

@@ -9,7 +9,7 @@ function site_scripts() {
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/vendor/jquery/dist/jquery.min.js', array(), '', false );
 
     // Load What-Input files in footer
-    wp_enqueue_script( 'what-input', get_template_directory_uri() . '/vendor/what-input/what-input.min.js', array(), '', true );
+    //wp_enqueue_script( 'what-input', get_template_directory_uri() . '/vendor/what-input/what-input.min.js', array(), '', true );
 
     // Adding Materialize scripts file in the footer
     wp_enqueue_script( 'materialize-js', get_template_directory_uri() . '/assets/js/bin/materialize.js', array( 'jquery' ), '', true );
@@ -25,6 +25,11 @@ function site_scripts() {
 
     // Register main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.css', array(), '', 'all' );
+
+    // Deregister admin stylesheet so that it doesn't load on the front-end form
+
+    wp_deregister_style( 'wp-admin' );
+
 
     // Comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
