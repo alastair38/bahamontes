@@ -6,5 +6,5 @@
 		the_post_thumbnail('thumbnail');
 	}
 	?>
-	Posted on <?php the_time('F j, Y') ?> <span class="hide-on-small-only">by <?php the_author_posts_link(); ?> - <?php the_category(', ') ?></span>
+	Posted on <?php the_time('F j, Y') ?> <span class="hide-on-small-only">by Alastair in <?php the_category(', ') ?></span>
 </div>

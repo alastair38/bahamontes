@@ -4,17 +4,20 @@
 
 		<div id="inner-content" class="row">
 
-			<main id="main" class="col s12 m8" role="main">
-				<header>
-					<h1 class="archive-title"><?php _e('Search Results for:', 'jointstheme'); ?> <?php echo esc_attr(get_search_query()); ?></h1>
-				</header>
+		    <main id="main" class="col s12 m8 l8" role="main">
 
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		    	<header>
+		    		<h1 class="page-title"><?php the_archive_title();?></h1>
+					<?php get_template_part( 'parts/content', 'mission' ); ?>
+		    	</header>
+
+		    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 					<!-- To see additional archive styles, visit the /parts directory -->
 					<?php get_template_part( 'parts/loop', 'archive-locations' ); ?>
 
 				<?php endwhile; ?>
+
 
 					<?php joints_page_navi(); ?>
 
@@ -22,13 +25,13 @@
 
 					<?php get_template_part( 'parts/content', 'missing' ); ?>
 
-			    <?php endif; ?>
+				<?php endif; ?>
 
-		    </main> <!-- end #main -->
+			</main> <!-- end #main -->
 
-		    <?php get_sidebar(); ?>
+			<?php get_sidebar(); ?>
 
-		</div> <!-- end #inner-content -->
+	    </div> <!-- end #inner-content -->
 
 	</div> <!-- end #content -->
 

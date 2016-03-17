@@ -4,7 +4,7 @@
 
 		<div id="inner-content" class="row">
 
-		    <main id="main" class="col s12 m8 l8" role="main">
+		    <main id="main" class="col l12" role="main">
 
 		    	<header>
 		    		<h1 class="page-title"><?php the_archive_title();?></h1>
@@ -18,6 +18,7 @@
 
 				<?php endwhile; ?>
 
+
 					<?php joints_page_navi(); ?>
 
 				<?php else : ?>
@@ -28,7 +29,7 @@
 
 			</main> <!-- end #main -->
 
-			<?php get_sidebar(); ?>
+
 
 	    </div> <!-- end #inner-content -->
 

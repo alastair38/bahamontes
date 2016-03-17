@@ -2,25 +2,12 @@
 	<div class="col s12">
 
 		<?php
-		if (is_single()) {
+		if (is_singular('post')) {
 			the_post_thumbnail('large', array('class' => 'hide-on-med-and-down responsive-img'));
-		}
+		} else {
+			get_template_part( 'parts/content', 'search-form' );
+		} ?>
 
-		 ?>
-
-		<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
-
-			<?php dynamic_sidebar( 'sidebar1' ); ?>
-
-		<?php else : ?>
-
-		<!-- This content shows up if there are no widgets defined in the backend. -->
-
-		<div class="alert help">
-			<p><?php _e("Please activate some Widgets.", "jointstheme");  ?></p>
-		</div>
-
-		<?php endif; ?>
 	</div>
 
 

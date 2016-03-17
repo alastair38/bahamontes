@@ -1,27 +1,26 @@
 <?php
 get_header(); ?>
 
-	<div class="container">
-
-		<div id="inner-content" class="row">
-
-		    <main id="main" class="col s12" role="main">
-
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
 
 
+	<div id="inner-content" class="container">
 
-			    <?php endwhile; endif; ?>
+			<main id="main" class="row" role="main">
+
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+					<?php get_template_part( 'parts/loop', 'page' ); ?>
 
 
-			</main> <!-- end #main -->
+				<?php endwhile; endif; ?>
 
-		    <?php // get_sidebar(); ?>
 
-		</div> <!-- end #inner-content -->
+		</main> <!-- end #main -->
 
-	</div> <!-- end #content -->
+			<?php // get_sidebar(); ?>
+
+	</div> <!-- end #inner-content -->
+
+
 
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="modal-footer">
-			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn red right">Close</a>
+			<a href="" class=" modal-action modal-close waves-effect waves-green btn red right">Close</a>
 		</div>
 
 	</div>

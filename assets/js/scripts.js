@@ -27,11 +27,54 @@ $(".dropdown-button").click(function(){
 $(".add-image").removeClass("button").addClass("btn");
 //$(".label").removeClass("label").addClass("chip");
 $(".field input[value='Report location']").addClass("btn");
-
 });
+
+var options = [
+    {selector: '#about-pathways', offset: 50, callback: 'Materialize.fadeInImage("#about-pathways")' },
+    {selector: '#gettingStarted', offset: 50, callback: 'Materialize.fadeInImage("#gettingStarted")' }
+];
+Materialize.scrollFire(options);
+
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
 
 window.cookieconsent_options = {
        learnMore: 'More info',
        theme: 'dark-bottom',
        link: document.location.origin + '/privacy'
    };
+
+
+   var markers = document.querySelectorAll('input[type="radio"]'),
+       l = markers.length,
+       i, txt;
+   for (i = l - 1; i >= 0; i--) {
+       txt = markers[i].nextSibling;
+       $(txt).prev().attr('id', 'r' + markers[i].value);
+       $(txt).wrap('<label for="r' + markers[i].value + '"/>');
+   };
+
+   var markers = document.querySelectorAll('input[type="checkbox"]'),
+       l = markers.length,
+       i, txt;
+   for (i = l - 1; i >= 0; i--) {
+       txt = markers[i].nextSibling;
+       $(txt).prev().attr('id', 'r' + markers[i].value);
+       $(txt).wrap('<label for="r' + markers[i].value + '"/>');
+   };
+
+   $(document).ready(function(){
+   	$('a[href^="#"]').on('click',function (e) {
+   	    e.preventDefault();
+
+   	    var target = this.hash;
+   	    var $target = $(target);
+
+   	    $('html, body').stop().animate({
+   	        'scrollTop': $target.offset().top
+   	    }, 900, 'swing', function () {
+   	        window.location.hash = target;
+   	    });
+   	});
+   });

@@ -38,7 +38,7 @@ require_once(get_template_directory().'/assets/translation/translation.php');
 // require_once(get_template_directory().'/assets/functions/related-posts.php');
 
 // Use this as a template for custom post types
-// require_once(get_template_directory().'/assets/functions/custom-post-type.php');
+require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
 // Customize the WordPress login menu
 // require_once(get_template_directory().'/assets/functions/login.php');
@@ -48,7 +48,7 @@ require_once(get_template_directory().'/assets/functions/admin.php');
 
 function my_pre_save_post( $post_id ) {
     // check if this is to be a new post
-    if( $post_id != 'new' )
+    if( $post_id != 'new_post' )
     {
         return $post_id;
     }
@@ -58,7 +58,7 @@ function my_pre_save_post( $post_id ) {
     $post = array(
         'post_status'  => 'draft',
         'post_title'  => $title,
-        'post_type'  => 'post',
+        'post_type'  => 'locations',
     );
     // insert the post
     $post_id = wp_insert_post( $post );

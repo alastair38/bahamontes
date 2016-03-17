@@ -17,19 +17,19 @@ function create_pages(){
         update_post_meta($postID, "_wp_page_template", "page.php");
         update_option("home_page_id", $postID);
     }
-    $about_page_id = get_option("about_page_id");
-    if (!$about_page_id) {
+    $form_page_id = get_option("form_page_id");
+    if (!$form_page_id) {
         //create a new page and automatically assign the page template
         $post1 = array(
-            'post_title' => "About",
-            'post_content' => "Put something about yourself or your company here",
+            'post_title' => "Form",
+            'post_content' => "",
             'post_status' => "publish",
             'post_type' => 'page',
             'comment_status' => 'closed'
         );
         $postID = wp_insert_post($post1, $error);
-        update_post_meta($postID, "_wp_page_template", "page.php");
-        update_option("about_page_id", $postID);
+        update_post_meta($postID, "_wp_page_template", "page-form.php");
+        update_option("form_page_id", $postID);
     }
     $privacy_page_id = get_option("privacy_page_id");
     if (!$privacy_page_id) {
@@ -60,7 +60,7 @@ function create_pages(){
 }
 
 // Sets 'Home' as the static front page
-$home = get_page_by_title( 'Home' );
+$home = get_page_by_title( 'Pathways' );
 update_option( 'page_on_front', $home->ID );
 update_option( 'show_on_front', 'page' );
 

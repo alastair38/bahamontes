@@ -286,11 +286,11 @@ textarea {
 }
 
 /* Checked styles */
-[type="radio"]:checked + label:before {
+[type="radio"]:checked ~ label:before {
   border-radius: 50%;
   border: 2px solid transparent;
 }
-[type="radio"]:checked + label:after {
+[type="radio"]:checked ~ label:after {
   border-radius: 50%;
   border: 2px solid $radio-fill-color;
   background-color: $radio-fill-color;

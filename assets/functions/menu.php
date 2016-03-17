@@ -62,3 +62,16 @@ function joints_main_nav_fallback() {
 function joints_footer_links_fallback() {
 	/* You can put a default here if you like */
 }
+
+add_filter( 'wp_nav_menu_items', 'add_login_link', 10, 2);
+/**
+ * Add a login/logout link, edit profile and add new articles etc links for logged in users
+ */
+function add_login_link( $items, $args )
+{
+    if($args->theme_location == 'main-nav')
+    {
+			$items .= '<li class="show-for-large"><a href="' . get_post_type_archive_link( 'locations' ) . '">Locations</a></li>';
+    }
+    return $items;
+}

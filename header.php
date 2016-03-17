@@ -44,6 +44,12 @@
 							  To see additional nav styles, visit the /parts directory -->
 						 <?php get_template_part( 'parts/nav', 'topbar' ); ?>
 
-             	
+
 
 					</header> <!-- end .header -->
+
+          <?php if (!is_front_page() && !is_page('Form')) {
+             get_template_part( 'parts/content', 'floating-button' );
+          }
+
+           ?>

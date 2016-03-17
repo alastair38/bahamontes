@@ -1,15 +1,19 @@
 <?php get_header(); ?>
 
-	<div class="container">
+
 
 		<div id="inner-content" class="row">
 
-		    <main id="main" class="col s12 m8" role="main">
+		    <main id="main" class="" role="main">
+
+					<header>
+						<h1 class="page-title center"><?php single_post_title();?></h1>
+					</header>
 
 			    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/loop', 'archive' ); ?>
+					<?php get_template_part( 'parts/loop', 'blog' ); ?>
 
 				<?php endwhile; ?>
 
@@ -23,10 +27,10 @@
 
 		    </main> <!-- end #main -->
 
-		    <?php get_sidebar(); ?>
+
 
 		</div> <!-- end #inner-content -->
 
-	</div> <!-- end #content -->
+
 
 <?php get_footer(); ?>

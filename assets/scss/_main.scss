@@ -135,10 +135,22 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	@extend .red-text;
 	font-weight: 200;
+  font-size: $h3-fontsize;
 	@media #{$medium-and-down} {
     font-size: 2.25rem;
+  }
+  @media #{$small-and-down} {
+    font-size: 1.75rem;
+    font-weight: 300;
+  }
+}
+
+.home h1 {
+  font-size: 8em;
+  font-weight: 500;
+  @media #{$small-and-down} {
+    font-size: 3em;
   }
 }
 
@@ -146,6 +158,18 @@ h2, .h2 {
 	font-weight: 200;
 	@media #{$medium-and-down} {
     font-size: 2rem;
+  }
+  @media #{$small-and-down} {
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+}
+
+.archive h2 {
+  font-size: $h4-fontsize;
+  font-weight: 300;
+  @media #{$small-and-down} {
+    font-size: $h5-fontsize;
   }
 }
 
@@ -180,12 +204,18 @@ HEADER STYLES
     height: 40px;
     width: auto;
     animation: show 1000ms 1;
+    @media #{$small-and-down} {
+    	height: 25px;
+  	}
   }
   .brand-logo {
     animation: show 1000ms 1;
+    @media #{$small-and-down} {
+    	font-size: 1.25rem;
+  	}
   }
 }
-
+;
 .lean-overlay {
   height: 0;
 }
@@ -201,7 +231,6 @@ NAVIGATION STYLES
 
 i.mdi.mdi-menu {
   height: 37px;
-  line-height: 37px;
 }
 
 
@@ -283,6 +312,19 @@ MODAL
 ACF FORM OVERRIDES
 *********************/
 
+.acf-form {
+  .btn{
+    @media #{$small-and-down} {
+      width: 100%;
+    }
+}
+}
+
+.acf_postbox p.label {
+  font-size: 14px;
+  color: $primary-color;
+}
+
 .acf_postbox input.select-dropdown {
   padding: 5px 0 !important;
 }
@@ -295,6 +337,9 @@ ACF FORM OVERRIDES
 input.add-image.btn {
   position: absolute;
   top: 0;
+  @media #{$small-and-down} {
+    position: relative;
+  }
 }
 
 .acf-google-map {
@@ -337,17 +382,48 @@ input.add-image.btn {
 POSTS & CONTENT STYLES
 *********************/
 
+body.home {
+  background: $footer-bg-color;
+}
+body.home {
+  background: url('http://127.0.0.1/maertens/wp-content/uploads/2016/03/morningside.jpg') no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
 	#inner-content {
     @media #{$medium-and-up} {
       min-height: 85vh;
     }
 	}
 
+.home article {
+  //background: rgba(43,187,173,.85);
+  //background: rgba(255,255,255,.55);
+  margin-top: 4em;
+  color: rgba(38,38,38,.85);
+}
 
+.home .entry-content {
+  display: inline-block;
+  border-bottom: 5px solid rgba(43,187,173,.85);
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 2em;
+  @media #{$small-and-down} {
+    font-size: 1.25rem;
+  }
+}
 
 
 footer.card-content {
   border-top: 1px solid rgba(160,160,160,.2);
+}
+
+article section {
+  @media #{$medium-and-down} {
+    padding: .5em 0;
+  }
 }
 
 .single-title,
@@ -373,12 +449,151 @@ footer.card-content {
 }
 
 // Post meta
+
+
 .single #byline {
 	@extend .white;
 	time {}
 }
 
+#meta-locations {
+  a {
+    @extend .white-text;
+  }
+}
+
+#byline {
+  &.chip {
+    @media #{$medium-and-down} {
+    	margin-bottom: 1em;
+      width: 100%;
+    }
+  }
+}
+
+#meta-locations, #meta-archives {
+  .chip {
+    @media #{$medium-and-down} {
+    	margin-top: .75em;
+      width: 100%;
+    }
+  }
+}
+
+.single {
+  #meta-locations {
+    padding-top: 2em;
+  }
+  #byline-locations {
+    margin-bottom: 2em;
+    border-bottom: 4px solid $primary-color;
+  }
+}
+
+// Home page
+
+#gettingStarted {
+  opacity: 0;
+  padding: 5em 1em 3em 1em;
+  margin-bottom: 0;
+  background: rgba(38,38,38,.85);
+  aside {
+    padding: 1em 2em;
+  }
+  .search-submit.btn{
+    @media #{$small-and-down} {
+      width: 100%;
+    }
+  }
+  #text {
+  }
+  p {
+    line-height: 1.75em;
+    &#intro {
+      font-size: 1.3em;
+      font-weight: 300;
+      @media #{$small-and-down} {
+      	font-size: 1.1em;
+      }
+    }
+    &#locationText {
+      font-size: 1.05em;
+    }
+  }
+}
+
+#about-pathways {
+  opacity: 0;
+  padding: 2em 0em;
+  margin-bottom: 0;
+  background: rgba(255,255,255,.85);
+  aside {
+    padding: 1em 2em;
+  }
+  h3{
+    @media #{$small-and-down} {
+      text-align: center;
+    }
+  }
+  .btn{
+    @media #{$small-and-down} {
+      width: 100%;
+    }
+  }
+  p {
+    line-height: 1.75em;
+    font-size: 1.3em;
+    font-weight: 300;
+    @media #{$small-and-down} {
+      font-size: 1.1em;
+    }
+  }
+}
+
 // Entry content
+.about .entry-content p {
+  font-size: 1.3em;
+  font-weight: 300;
+  em {
+    font-weight: 500;
+  }
+  @media #{$small-and-down} {
+    font-size: 1.1em;
+    margin: .5em;
+    text-align: justify;
+  }
+  &:before {
+    font-size: 4rem;
+    display: block;
+    text-align:left;
+    color: $secondary-color;
+  }
+  &:first-of-type, &:last-of-type {
+    padding: 1rem 0;
+  }
+  &:nth-of-type(2) {
+    padding: 1rem 2rem;
+    background: color("grey", "lighten-4");
+    &:before {
+      content: '1';
+    }
+  }
+  &:nth-of-type(3) {
+    padding: 1rem 2rem;
+    background: color("grey", "lighten-4");
+    &:before {
+      content: '2';
+    }
+  }
+  &:nth-of-type(4) {
+    padding: 1rem 2rem;
+    background: color("grey", "lighten-4");
+    &:before {
+      content: '3';
+    }
+  }
+}
+
 .entry-content {
   img.hide-on-large-only {
     margin-top: 2rem;
@@ -437,11 +652,9 @@ footer.card-content {
 	}
 }
 
-// Add Foundation styling to password protect button
-.post-password-form input[type="submit"] {
-	//@include button;
+.parallax-container {
+  height: 250px;
 }
-
 /*********************
 IMAGE GALLERY STYLES
 *********************/
@@ -882,6 +1095,10 @@ FOOTER STYLES
       border-bottom: 1px dotted;
     }
   }
+}
+
+.home footer {
+  background: rgba(38,38,38,.85);
 }
 
 /*********************
