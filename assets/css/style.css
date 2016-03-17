@@ -10886,7 +10886,7 @@ body.home {
   background: #616161; }
 
 body.home {
-  background: url("http://127.0.0.1/maertens/wp-content/uploads/2016/03/morningside.jpg") no-repeat;
+  background: url("../images/morningside.jpg") no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed; }
 
