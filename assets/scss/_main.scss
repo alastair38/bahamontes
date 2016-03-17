@@ -223,11 +223,7 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-.navbar-fixed nav {
-  @media #{$medium-and-down} {
-  	position: relative;
-	}
-}
+
 
 i.mdi.mdi-menu {
   height: 37px;
@@ -386,8 +382,8 @@ body.home {
   background: $footer-bg-color;
 }
 body.home {
-  background: url('../images/morningside.jpg') no-repeat;
-  background-size: 100% 100%;
+  background: url('../images/circuito.png') no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 	#inner-content {

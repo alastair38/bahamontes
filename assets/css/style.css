@@ -10769,10 +10769,6 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-@media only screen and (max-width: 992px) {
-  .navbar-fixed nav {
-    position: relative; } }
-
 i.mdi.mdi-menu {
   height: 37px; }
 
@@ -10886,8 +10882,8 @@ body.home {
   background: #616161; }
 
 body.home {
-  background: url("../images/morningside.jpg") no-repeat;
-  background-size: 100% 100%;
+  background: url("../images/circuito.png") no-repeat;
+  background-size: cover;
   background-attachment: fixed; }
 
 @media only screen and (min-width: 601px) {
