@@ -1642,7 +1642,7 @@ CSS3 GRADIENTS.
 .white, a.dropdown-button.active, .single #byline, .footer li a:hover .mdi, .footer li a:focus .mdi {
   background-color: #FFFFFF !important; }
 
-.white-text, #meta-locations a, a#cancel-comment-reply-link, .footer, .footer li a, .footer .copyright a {
+.white-text, a#cancel-comment-reply-link, .footer, .footer li a, .footer .copyright a {
   color: #FFFFFF !important; }
 
 .transparent {
@@ -10777,6 +10777,9 @@ i.mdi.mdi-menu {
     width: 64px;
     height: 64px; } }
 
+#nav-mobile {
+  text-align: center; }
+
 @media only screen and (max-width: 992px) {
   .side-nav li {
     padding: 0; } }
@@ -10884,6 +10887,7 @@ body.home {
 body.home {
   background: url("../images/circuito.png") no-repeat;
   background-size: cover;
+  background-position: center center;
   background-attachment: fixed; }
 
 @media only screen and (min-width: 601px) {
@@ -10916,6 +10920,12 @@ footer.card-content {
   border: 0px;
   padding: 0px; }
 
+#map, #photo {
+  padding: 1em 0; }
+
+#meta-locations {
+  padding: 1em 0; }
+
 @media only screen and (max-width: 992px) {
   #byline.chip {
     margin-bottom: 1em;
@@ -10924,7 +10934,8 @@ footer.card-content {
 @media only screen and (max-width: 992px) {
   #meta-locations .chip, #meta-archives .chip {
     margin-top: .75em;
-    width: 100%; } }
+    width: 100%;
+    overflow: auto; } }
 
 .single #meta-locations {
   padding-top: 2em; }
@@ -11043,6 +11054,9 @@ footer.card-content {
   background: #eee;
   border: 1px solid #cecece;
   padding: 10px; }
+
+img.hide-on-med-and-up {
+  width: 100%; }
 
 .wp-caption {
   max-width: 100%;

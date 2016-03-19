@@ -6,7 +6,7 @@ get_header(); ?>
 
 	<div id="inner-content" class="row">
 
-		<main id="main" class="col s12 m8" role="main">
+		<main id="main" class="col s12 l8" role="main">
 
 		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
