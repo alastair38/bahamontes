@@ -386,10 +386,13 @@ body.home {
   background: $footer-bg-color;
 }
 body.home {
+  background: color("grey", "lighten-4");
+  @media #{$medium-and-up} {
   background: url('../images/circuito.png') no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  }
 }
 	#inner-content {
     @media #{$medium-and-up} {
